@@ -11,14 +11,15 @@ class App extends React.Component {
     this.state = {
       movies: moviesData
     };
+    this.removeMovie = this.removeMovie.bind(this);
   }
 
-  removeMovie = movie => {
+  removeMovie(movie) {
     const updatedMovies = this.state.movies.filter(function(item) {
       return item.imdbID !== movie.imdbID;
     });
     this.setState({ movies: updatedMovies });
-  };
+  }
 
   render() {
     return (
